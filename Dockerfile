@@ -13,6 +13,8 @@ WORKDIR /app
 # Copy project
 COPY pyproject.toml poetry.lock /app/
 COPY todo_api /app/todo_api/
+COPY alembic /app/alembic/
+COPY alembic.ini /app
 
 # Install dependencies
 RUN pip install --upgrade pip && \
