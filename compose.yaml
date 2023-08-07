@@ -1,0 +1,29 @@
+services:
+  app:
+    build: .
+    user: root
+    command: sleep infinity
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    environment:
+      - APP_ENV=development
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15.3-bookworm
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+
+volumes:
+  db-data:

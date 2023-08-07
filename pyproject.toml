@@ -1,0 +1,43 @@
+[tool.poetry]
+authors = ["Suphawit Watthanataetakun <suphawit.wt@gmail.com>"]
+description = "This is CRUD Todo API project using FastAPI, PostgreSQL, SQLAlchemy, Alembic, Pytest, MyPy, Poetry, Docker, JWT and Swagger"
+name = "todo-api-fastapi"
+packages = [
+  {include = "todo_api"},
+]
+readme = ".github/README.md"
+version = "1.0.0"
+
+[tool.poetry.scripts]
+dev = 'todo_api.main:dev'
+
+[tool.poetry.dependencies]
+alembic = "^1.11.2"
+asyncpg = "^0.28.0"
+bcrypt = "^4.0.1"
+fastapi = "^0.101.0"
+pyjwt = "^2.8.0"
+python = "^3.10"
+sqlalchemy = "^2.0.19"
+uvicorn = "^0.23.2"
+
+[tool.poetry.group.dev.dependencies]
+flake8 = "^6.1.0"
+mypy = "^1.4.1"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.4.0"
+pytest-asyncio = "^0.21.1"
+
+[tool.pytest.ini_options]
+markers = [
+  "asyncio: mark a test as an asyncio test.",
+]
+
+[tool.mypy]
+exclude = ["alembic"]
+strict = true
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core"]

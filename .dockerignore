@@ -1,0 +1,64 @@
+# Ignore other unnecessary files
+.git/
+.github/
+.devcontainer/
+.gitignore
+tests/
+README.md
+LICENSE
+
+# Ignore Docker-related files
+.dockerignore
+Dockerfile
+compose.yaml
+compose.yml
+docker-compose*.yaml
+docker-compose*.yml
+
+# Environments
+.env
+.env.*
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Ignore Python bytecode
+**/__pycache__
+**/*.pyc
+**/*.pyo
+
+# Linting
+.flake8
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Ignore configuration files
+.idea/
+.vscode/
+*.iml
+
+# Ignore distribution/build directories
+dist/
+build/
+*.egg-info/
