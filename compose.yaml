@@ -15,7 +15,7 @@ services:
       - db
 
   db:
-    image: postgres:15.3-bookworm
+    image: postgres:16.3
     restart: unless-stopped
     ports:
       - "5432:5432"
